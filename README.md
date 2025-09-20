@@ -1,24 +1,80 @@
-Face Recognition
+# 👤 Face Recognition–Based Attendance System  
 
-This repository features a facial recognition system implemented using OpenCV and Python, coupled with a Tkinter GUI interface. To test the code, simply execute the `train.py` file.
+A **facial recognition–based attendance management system** built with **Python**, **OpenCV**, and a **Tkinter GUI**.  
+The system allows users to mark attendance simply by facing the camera, and logs details into structured CSV files.  
 
-Technologies Used:
-- OpenCV (Open Source Computer Vision)
-- Python
-- Tkinter GUI interface
+---
 
-The primary focus here is on developing a Facial Recognition-based Attendance Management System using OpenCV in Python. This system enables users to mark their attendance by facing the camera.
+## 🛠️ Technologies Used
+- Python 3.x  
+- OpenCV (Open Source Computer Vision Library)  
+- Tkinter (Python GUI library)  
 
- Functionality:
+---
 
-1.  Initialization : Upon running `train.py`, a window prompts the user to enter an ID and Name.
+## 🚀 Features
+- **Image Capture** – Capture facial images linked with an ID & Name.  
+- **Training** – Train the recognition model with captured images (60 per person).  
+- **Real-time Recognition** – Detect and identify faces via webcam.  
+- **Attendance Logging** – Automatically record Name, ID, Date, and Time in a CSV file.  
+- **GUI Interface** – Simple Tkinter interface with buttons for each action.  
 
-2.  Image Capture : After entering the ID and Name, clicking the "Take Images" button opens the computer's camera to capture image samples of the person. These images are saved in the "TrainingImage" folder. Additionally, the provided ID and Name are stored in a CSV file named "StudentDetails.csv" within the "StudentDetails" folder.
+---
 
-3.  Training : Once a sufficient number of images (60 in this case) are captured, clicking the "Train Image" button initiates the training process. The system trains itself using the captured images and generates a "Trainer.yml" file, which is saved in the "TrainingImageLabel" folder.
+## 📂 Project Workflow
 
-4.  Recognition : After the initial setup, clicking the "Track Image" button reopens the camera for facial recognition. If a face is recognized, the person's ID and Name are displayed on the image.
+1. **Initialization**  
+   - Run `train.py`.  
+   - Enter `ID` and `Name` in the input fields.  
 
-5.  Attendance Logging : Upon exiting the recognition window by pressing "Q" or "q", the system logs the attendance of the recognized person. This information, including the Name, ID, Date, and Time, is stored in a CSV file within the "Attendance" folder and is also displayed in the window.
+2. **Image Capture**  
+   - Click **Take Images**.  
+   - The camera opens and captures ~60 samples per person.  
+   - Images are saved in the `TrainingImage/` folder.  
+   - Details are logged in `StudentDetails/StudentDetails.csv`.  
 
-This system provides a convenient solution for facial recognition-based attendance management, combining the capabilities of OpenCV, Python, and Tkinter GUI for a user-friendly experience.
+3. **Training**  
+   - Click **Train Image**.  
+   - The model is trained using OpenCV and saved as `TrainingImageLabel/Trainer.yml`.  
+
+4. **Recognition**  
+   - Click **Track Image**.  
+   - The camera recognizes faces and displays `ID` + `Name`.  
+   - Attendance is recorded in `Attendance/` as a CSV file with Date & Time.  
+
+---
+
+## 📁 Folder Structure
+
+Face-recognition–based-attendance/
+├── Attendance/                  # CSV logs of attendance
+├── StudentDetails/               # StudentDetails.csv with IDs & Names
+├── TrainingImage/                # Captured face images
+├── TrainingImageLabel/           # Trained model (Trainer.yml)
+├── haarcascade_frontalface_default.xml # Haar Cascade model for face detection
+├── train.py                      # Main script with Tkinter GUI
+├── objectsdemo.py                 # Supporting demo script
+├── setup.py                       # Setup file
+└── README.md                      # Project documentation
+
+
+---
+
+## 📊 Example Attendance Log
+| ID   | Name   | Date       | Time     |
+|------|--------|------------|----------|
+| 1    | Alice  | 2025-09-20 | 09:15:32 |
+| 2    | Bob    | 2025-09-20 | 09:16:10 |
+
+---
+
+## 🔮 Future Improvements
+- Use **deep learning models (FaceNet, dlib, or CNNs)** for higher accuracy.  
+- Add **database integration** (MySQL/Postgres) for attendance instead of CSV.  
+- Deploy with a **web interface** or integrate with **mobile app**.  
+- Improve handling of low-light or occluded face recognition.  
+
+---
+
+## 📜 License
+MIT © 2025 Teenu Anand Nukavarapu  
